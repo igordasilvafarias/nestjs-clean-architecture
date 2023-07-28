@@ -10,8 +10,20 @@ export class User {
     this.props.created_at = this.props.created_at ?? new Date();
   }
 
+  updateName(value: string) {
+    this.name = value;
+  }
+
+  updatePassword(value: string) {
+    this.password = value;
+  }
+
   get name(): string {
     return this.props.name;
+  }
+
+  set name(value: string) {
+    this.props.name = value;
   }
 
   get email(): string {
@@ -20,6 +32,10 @@ export class User {
 
   get password(): string {
     return this.props.password;
+  }
+
+  set password(value: string) {
+    this.props.password = value;
   }
 
   get created_at(): Date {
