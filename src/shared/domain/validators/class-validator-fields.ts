@@ -12,6 +12,7 @@ export abstract class ClassValidatorFields<PropsValidated>
 
   validate(data: any): boolean {
     const errors = validateSync(data);
+    console.log(errors);
     if (errors.length > 0) {
       this.errors = {};
       for (const error of errors) {
@@ -22,6 +23,6 @@ export abstract class ClassValidatorFields<PropsValidated>
       this.validatedData = data;
     }
 
-    return !this.errors.length;
+    return !errors.length;
   }
 }
